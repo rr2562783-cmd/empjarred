@@ -1,1 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empowerment Technology & The Digital Frontier</title>
+  
+  <!-- Fonts: Google Inter & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
 
+  <style>
+    /* -------------------------------------------------------------------------- */
+    /* DESIGN SYSTEM & VARIABLES                                                  */
+    /* Calm red base with refined cyan-blue accents & muted neon glows           */
+    /* -------------------------------------------------------------------------- */
+    :root {
+      --bg-dark: #0f0305;
+      --bg-card: rgba(28, 9, 14, 0.65);
+      --bg-card-border: rgba(230, 57, 70, 0.18);
+      --red-accent: #e63946;
+      --blue-accent: #00d4ff;
+      --blue-glow: rgba(0, 212, 255, 0.25);
+      --neon-blue: rgba(0, 212, 255, 0.75);
+      --text-main: #f1faee;
+      --text-muted: #a8a2a6;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-code: 'Fira Code', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: radial-gradient(circle at 50% -20%, #2b080c 0%, var(--bg-dark) 70%);
+      background-attachment: fixed;
+    }
+
+    /* Muted Low-Opacity Neon Effects */
+    .neon-text-blue {
+      color: #e0f7fc;
+      text-shadow: 0 0 12px rgba(0, 212, 255, 0.35), 0 0 24px rgba(0, 212, 255, 0.15);
+    }
+    
+    .neon-text-red {
+      color: #ffe8ea;
+      text-shadow: 0 0 12px rgba(230, 57, 70, 0.35), 0 0 24px rgba(230, 57, 70, 0.15);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* NAVIGATION BAR                                                             */
+    /* -------------------------------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 3, 5, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue-accent);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* HERO HEADER                                                                */
+    /* -------------------------------------------------------------------------- */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+      position: relative;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      color: var(--blue-accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(230, 57, 70, 0.8), rgba(0, 212, 255, 0.8));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 212, 255, 0.3);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* SECTIONS COMMON                                                            */
+    /* -------------------------------------------------------------------------- */
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 14px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* SECTION 1: DEFINE                                                          */
+    /* -------------------------------------------------------------------------- */
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .story-text p {
+      margin-bottom: 18px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .story-text strong {
+      color: var(--text-main);
+    }
+
+    /* SVG Diagram Styling */
+    .chart-box {
+      background: rgba(15, 3, 5, 0.8);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* SECTION 2: EVOLUTION                                                       */
+    /* -------------------------------------------------------------------------- */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .timeline-card {
+      position: relative;
+      background: rgba(20, 5, 8, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue-accent);
+    }
+
+    .era-tag {
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: var(--blue-accent);
+      background: rgba(0, 212, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* SECTION 3 & 4: MEDIA EMBEDS                                                */
+    /* -------------------------------------------------------------------------- */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .video-wrapper iframe, .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 32px;
+    }
+
+    @media (max-width: 600px) {
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .work-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .work-item h3 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+    }
+
+    .external-card-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .external-card-link:hover {
+      background: rgba(0, 212, 255, 0.05);
+      border-color: var(--blue-accent);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* SECTION 5: STAY ALERT                                                     */
+    /* -------------------------------------------------------------------------- */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .rule-card {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--red-accent);
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .rule-card h4 {
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .rule-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* FOOTER & REFERENCES                                                       */
+    /* -------------------------------------------------------------------------- */
+    footer {
+      padding: 60px 0 40px;
+      background: #080103;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .references-list {
+      list-style-type: decimal;
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .references-list li {
+      margin-bottom: 8px;
+    }
+
+    .references-list a {
+      color: var(--blue-accent);
+      text-decoration: none;
+    }
+
+    .references-list a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo neon-text-blue">Empowerment Tech</a>
+        <ul class="nav-links">
+          <li><a href="#define">Define</a></li>
+          <li><a href="#evolution">Evolution</a></li>
+          <li><a href="#watch">Watch</a></li>
+          <li><a href="#works">My Work</a></li>
+          <li><a href="#stay-alert">Stay Alert</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">Digital Literacy & Architecture</span>
+          <h1 class="neon-text-red">Navigating the Architecture of Empowerment Technology</h1>
+          <p>An exploration of how interconnected technologies, web evolutions, and digital netiquette shape human potential in the modern age.</p>
+          <a href="#define" class="cta-button">Begin Journey</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: DEFINE -->
+    <section id="define">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title neon-text-blue">1. The Definition: A Story of Human Capability</h2>
+          <p class="section-subtitle">Understanding Empowerment Technology through narrative and data.</p>
+        </div>
+        
+        <div class="card story-layout">
+          <div class="story-text">
+            <p>Imagine living in a world limited by geographical boundaries, where knowledge was locked behind localized access and innovation moved at the speed of print. <strong>Empowerment Technology (E-Tech)</strong> emerged as the universal key that dismantled these invisible walls.</p>
+            <p>At its core, Empowerment Technology is more than just computers, networks, or software code. It is the deliberate application of information and communications technology (ICT) to give individuals and communities the leverage to solve real-world problems, collaborate globally, and amplify their voice.</p>
+            <p>From a student publishing research to a global audience, to entrepreneurs managing remote operations across oceans, E-Tech serves as the invisible scaffolding supporting contemporary human progress.</p>
+          </div>
+
+          <!-- SVG Bar Chart Visualization -->
+          <div class="chart-box">
+            <div class="chart-title">Global Internet Users Growth (2015 - 2024) [Billions]</div>
+            <svg viewBox="0 0 400 200" width="100%" height="auto">
+              <!-- Background Grid -->
+              <line x1="40" y1="30" x2="380" y2="30" stroke="rgba(255,255,255,0.05)" />
+              <line x1="40" y1="80" x2="380" y2="80" stroke="rgba(255,255,255,0.05)" />
+              <line x1="40" y1="130" x2="380" y2="130" stroke="rgba(255,255,255,0.05)" />
+              <line x1="40" y1="170" x2="380" y2="170" stroke="rgba(255,255,255,0.1)" />
+
+              <!-- Bars -->
+              <!-- 2015: 3.0B -->
+              <rect x="60" y="100" width="30" height="70" fill="#e63946" opacity="0.7" rx="4"/>
+              <text x="75" y="92" fill="#a8a2a6" font-size="10" text-anchor="middle">3.0B</text>
+              <text x="75" y="187" fill="#a8a2a6" font-size="10" text-anchor="middle">2015</text>
+
+              <!-- 2018: 3.9B -->
+              <rect x="140" y="78" width="30" height="92" fill="#e63946" opacity="0.8" rx="4"/>
+              <text x="155" y="70" fill="#a8a2a6" font-size="10" text-anchor="middle">3.9B</text>
+              <text x="155" y="187" fill="#a8a2a6" font-size="10" text-anchor="middle">2018</text>
+
+              <!-- 2021: 4.9B -->
+              <rect x="220" y="55" width="30" height="115" fill="#00d4ff" opacity="0.8" rx="4"/>
+              <text x="235" y="47" fill="#a8a2a6" font-size="10" text-anchor="middle">4.9B</text>
+              <text x="235" y="187" fill="#a8a2a6" font-size="10" text-anchor="middle">2021</text>
+
+              <!-- 2024: 5.4B -->
+              <rect x="300" y="40" width="30" height="130" fill="#00d4ff" opacity="1" rx="4"/>
+              <text x="315" y="32" fill="#00d4ff" font-size="11" font-weight="bold" text-anchor="middle">5.4B</text>
+              <text x="315" y="187" fill="#a8a2a6" font-size="10" text-anchor="middle">2024</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: EVOLUTION -->
+    <section id="evolution">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title neon-text-blue">2. The Web Evolution</h2>
+          <p class="section-subtitle">From static documents to intelligent, decentralized networks.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Web 1.0 -->
+          <div class="timeline-card">
+            <span class="era-tag">WEB 1.0 • Read-Only</span>
+            <h3 class="neon-text-red">The Static Web</h3>
+            <p>Characterized by static HTML pages, linear navigation, and centralized content creation. Users acted strictly as consumers reading information hosted on servers with minimal interactivity.</p>
+          </div>
+
+          <!-- Web 2.0 -->
+          <div class="timeline-card">
+            <span class="era-tag">WEB 2.0 • Read-Write</span>
+            <h3 class="neon-text-blue">The Social & Interactive Web</h3>
+            <p>Driven by user-generated content, social networks, dynamic web applications, and cloud computing. Power shifted toward platforms where users continuously create, share, and collaborate.</p>
+          </div>
+
+          <!-- Web 3.0 -->
+          <div class="timeline-card">
+            <span class="era-tag">WEB 3.0 • Read-Write-Own</span>
+            <h3 class="neon-text-red">The Semantic & Decentralized Web</h3>
+            <p>Integrates artificial intelligence, machine readability, and decentralized protocols. Data becomes interconnected contextually, prioritizing security, personalization, and user sovereignty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WATCH -->
+    <section id="watch">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title neon-text-blue">3. How the Internet Works</h2>
+          <p class="section-subtitle">An educational dive into the global physical network.</p>
+        </div>
+
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/Fno0L_XsdWM" 
+              title="How the Internet Works" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MY WORK -->
+    <section id="works">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title neon-text-blue">4. Portfolio & Created Media</h2>
+          <p class="section-subtitle">A collection of custom presentations, video edits, and visual art.</p>
+        </div>
+
+        <div class="works-grid">
+          <!-- Powtoon Video -->
+          <div class="card work-item">
+            <h3>Powtoon Presentation</h3>
+            <div class="video-wrapper">
+              <iframe 
+                src="https://www.powtoon.com/embed/ekGTPtSvadq/" 
+                title="Powtoon Presentation" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- CapCut Local Video -->
+          <div class="card work-item">
+            <h3>CapCut Video Edit</h3>
+            <div class="video-wrapper">
+              <video controls preload="metadata">
+                <source src="jarredcapcut.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <!-- Canva External Link -->
+          <div class="card work-item">
+            <h3>Canva Design Creation</h3>
+            <a href="https://www.canva.com/design/DAHM7cFAaMk/tkTjxj38C9wbfBKrOUOY9Q/edit" target="_blank" rel="noopener noreferrer" class="external-card-link">
+              <div>
+                <strong>View Canva Design</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Interactive visual slide presentation</p>
+              </div>
+              <span class="neon-text-blue">Open &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Pinterest External Link -->
+          <div class="card work-item">
+            <h3>Pinterest Portfolio Profile</h3>
+            <a href="https://ph.pinterest.com/jarredgrantg/?invite_code=ae0611f6e08747b593c771710c5efb4c&sender=970737032089358025" target="_blank" rel="noopener noreferrer" class="external-card-link">
+              <div>
+                <strong>Pinterest Profile</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Visual inspirations and digital curations</p>
+              </div>
+              <span class="neon-text-blue">Explore &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: STAY ALERT -->
+    <section id="stay-alert">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title neon-text-blue">5. Stay Alert: Netiquette & Cybersecurity</h2>
+          <p class="section-subtitle">Core principles for safe and ethical participation online.</p>
+        </div>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <h4 class="neon-text-red">1. Respect & Human Dignity</h4>
+            <p>Remember the human behind the screen. Avoid cyberbullying, flame wars, and harassment. Conduct yourself online with the same ethical standards as in real life.</p>
+          </div>
+
+          <div class="rule-card">
+            <h4 class="neon-text-red">2. Data Privacy & Hygiene</h4>
+            <p>Protect sensitive information. Use strong, unique passwords combined with two-factor authentication (2FA). Never share personal credentials online.</p>
+          </div>
+
+          <div class="rule-card">
+            <h4 class="neon-text-red">3. Critical Information Literacy</h4>
+            <p>Verify sources before disseminating information. Recognize phishing attempts, deceptive hyperlinks, and unverified news stories.</p>
+          </div>
+
+          <div class="rule-card">
+            <h4 class="neon-text-red">4. Intellectual Property Rights</h4>
+            <p>Acknowledge original creators when utilizing external content. Adhere to fair use guidelines, open-source licenses, and copyright protections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER & REFERENCES -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>References & Citations</h3>
+        <ol class="references-list">
+          <li>
+            International Telecommunication Union (ITU). (2024). <em>Global Connectivity Report & Internet User Statistics</em>. Retrieved from 
+            <a href="https://www.itu.int" target="_blank" rel="noopener">https://www.itu.int</a>
+          </li>
+          <li>
+            Statista. (2024). <em>Number of internet users worldwide from 2005 to 2024</em>. Retrieved from 
+            <a href="https://www.statista.com" target="_blank" rel="noopener">https://www.statista.com</a>
+          </li>
+          <li>
+            Code.org. (2017). <em>How the Internet Works (Video Reference)</em>. YouTube. 
+            <a href="https://youtu.be/Fno0L_XsdWM" target="_blank" rel="noopener">https://youtu.be/Fno0L_XsdWM</a>
+          </li>
+        </ol>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Empowerment Technology Academic Portfolio. Built for GitHub Pages.</p>
