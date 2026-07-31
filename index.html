@@ -473,25 +473,25 @@
       border: 1px solid var(--border-color);
       border-radius: 20px;
       padding: 1.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
 
-    .iframe-container {
+    .video-container {
       position: relative;
-      width: 100%;
       padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       height: 0;
-      border-radius: 12px;
       overflow: hidden;
+      border-radius: 12px;
+      background: #000;
     }
 
-    .iframe-container iframe {
+    .video-container iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: none;
+      border: 0;
     }
 
     .video-info {
@@ -504,207 +504,59 @@
     .video-title {
       font-family: var(--font-heading);
       font-size: 1.25rem;
-    }
-
-    /* ==========================================================================
-       SECTION 4: MY WORK (PORTFOLIO GRID)
-       ========================================================================== */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .work-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .work-card:hover {
-      border-color: var(--accent-blue);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-blue-glow);
-    }
-
-    .work-media {
-      height: 260px;
-      background: rgba(0, 0, 0, 0.4);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .work-media video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .work-media-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      background: linear-gradient(135deg, rgba(36, 13, 22, 0.9), rgba(12, 4, 8, 0.9));
       color: var(--text-bright);
-      text-decoration: none;
-      transition: background 0.3s ease;
     }
 
-    .work-media-placeholder:hover {
-      background: linear-gradient(135deg, rgba(50, 18, 30, 0.95), rgba(20, 8, 14, 0.95));
-    }
-
-    .work-icon {
-      font-size: 3rem;
-      color: var(--accent-blue);
-    }
-
-    .work-body {
-      padding: 1.5rem;
+    .video-tags {
       display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+      gap: 10px;
     }
 
-    .work-tag {
+    .video-tag {
+      background: rgba(230, 57, 86, 0.15);
       color: var(--accent-red);
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.4rem;
-    }
-
-    .work-title {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .work-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-      flex-grow: 1;
+      font-weight: 600;
     }
 
     /* ==========================================================================
-       SECTION 5: STAY ALERT (DIGITAL SAFETY & NETIQUETTE)
-       ========================================================================== */
-    .safety-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .safety-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .safety-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-red);
-      box-shadow: 0 10px 25px rgba(230, 57, 86, 0.2);
-    }
-
-    .safety-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: rgba(230, 57, 86, 0.1);
-      border: 1px solid var(--accent-red);
-      color: var(--accent-red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .safety-title {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .safety-list {
-      list-style: none;
-    }
-
-    .safety-list li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .safety-list li i {
-      color: var(--accent-blue);
-      margin-top: 4px;
-      font-size: 0.75rem;
-    }
-
-    /* ==========================================================================
-       REFERENCES FOOTER
+       FOOTER SECTION
        ========================================================================== */
     footer {
-      background: #080204;
+      background: var(--bg-surface);
       border-top: 1px solid var(--border-color);
       padding: 4rem 0 2rem 0;
+      margin-top: 4rem;
     }
 
-    .references-box {
-      background: rgba(24, 9, 15, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .references-title {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      color: var(--accent-blue);
-      margin-bottom: 1rem;
+    .footer-content {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      margin-bottom: 2rem;
     }
 
-    .references-list {
-      list-style: none;
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    .references-list li {
-      font-size: 0.85rem;
+    .footer-socials {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .footer-socials a {
       color: var(--text-muted);
-      margin-bottom: 0.6rem;
-      word-break: break-all;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
     }
 
-    .references-list a {
+    .footer-socials a:hover {
       color: var(--accent-blue);
-      text-decoration: none;
-    }
-
-    .references-list a:hover {
-      text-decoration: underline;
     }
 
     .footer-bottom {
@@ -712,87 +564,66 @@
       color: var(--text-muted);
       font-size: 0.85rem;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 1.5rem;
+      padding-top: 2rem;
     }
 
-    /* ==========================================================================
-       RESPONSIVE MEDIA QUERIES
-       ========================================================================== */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
-      .hero-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-cta {
-        justify-content: center;
-      }
-      .define-grid {
+      .hero-wrapper, .define-grid {
         grid-template-columns: 1fr;
       }
       .evolution-timeline {
         grid-template-columns: repeat(2, 1fr);
       }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      .safety-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.4rem;
-      }
-      .nav-links {
-        display: none; /* Can be expanded into hamburger menu */
-      }
+    @media (max-width: 600px) {
       .evolution-timeline {
         grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .nav-links {
+        display: none; /* Can be expanded into a mobile menu */
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION BAR -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <span class="logo-badge">EMTECH</span>
-        <span class="neon-text-blue">GRANT</span>
+        <span class="logo-badge">EmpTech</span>
+        <span class="neon-text-blue">Portfolio</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#define" class="active">1. Define</a></li>
-        <li><a href="#evolution">2. Evolution</a></li>
-        <li><a href="#watch">3. Watch</a></li>
-        <li><a href="#work">4. My Work</a></li>
-        <li><a href="#safety">5. Stay Alert</a></li>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#define">Definition</a></li>
+        <li><a href="#evolution">Web Evolution</a></li>
+        <li><a href="#watch">Media</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO HEADER -->
-  <header class="hero">
+  <!-- HERO SECTION -->
+  <header id="hero" class="hero">
     <div class="container hero-wrapper">
       <div class="hero-content">
         <div class="hero-badge">
-          <i class="fa-solid fa-bolt"></i> Digital Empowerment Showcase
+          <i class="fa-solid fa-bolt"></i> Digital Literacy Portfolio
         </div>
         <h1 class="hero-title">
-          Mastering <span class="neon-text-blue">Technology</span> &amp; 
-          <span class="neon-text-red">Digital Literacy</span>
+          Empowerment <span class="neon-text-red">Technologies</span> & Digital Innovation
         </h1>
         <p class="hero-subtitle">
-          An exploration of how modern technology empowers global communities, shapes communication, and drives innovation across the web.
+          Exploring the transformative power of Information and Communications Technology in shaping modern communication, societal progress, and digital productivity.
         </p>
         <div class="hero-cta">
-          <a href="#define" class="btn btn-primary">
-            Explore Story <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="#work" class="btn btn-outline">
-            View My Work <i class="fa-solid fa-folder-open"></i>
-          </a>
+          <a href="#define" class="btn btn-primary"><i class="fa-solid fa-compass"></i> Explore Topics</a>
+          <a href="#watch" class="btn btn-outline"><i class="fa-solid fa-play"></i> Watch Overview</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -800,11 +631,9 @@
           <div class="hero-card-icon">
             <i class="fa-solid fa-network-wired"></i>
           </div>
-          <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;" class="neon-text-blue">
-            Connected World
-          </h3>
+          <h3 style="margin-bottom: 0.5rem; color: var(--text-bright);">Connected World</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem;">
-            Over 6.0 Billion people are connected to the global digital matrix in 2026.
+            ICT acts as a foundation for societal transformation, bridging geographical boundaries through instantaneous digital channels.
           </p>
         </div>
       </div>
@@ -815,344 +644,194 @@
   <section id="define">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Section 01</span>
-        <h2 class="section-title neon-text-blue">Defining Empowerment Technology</h2>
-        <p class="section-description">A story of human connection, problem-solving, and digital leverage.</p>
+        <span class="section-tag">Core Concepts</span>
+        <h2 class="section-title">Understanding <span class="neon-text-blue">EmpTech</span></h2>
+        <p class="section-description">
+          An insight into how digital technologies serve as tools for empowerment and social change.
+        </p>
       </div>
 
       <div class="define-grid">
-        <!-- Story Card -->
         <div class="story-card">
           <p class="story-paragraph">
-            Imagine sitting in a remote village years ago, brimming with creative ideas or solutions to local challenges, but lacking a bridge to share them with the world. Information was confined to local physical libraries, printed paper, and geographic borders.
+            <span class="story-highlight">Empowerment Technology</span> refers to computer technologies that allow users to create, innovate, communicate, and solve real-world problems effectively.
           </p>
           <p class="story-paragraph">
-            Then came <span class="story-highlight">Empowerment Technology (E-Tech)</span>. It was not merely about owning a computer or scrolling through social media feeds. It emerged as the catalyst that transformed passive consumers into active creators, innovators, and problem solvers.
-          </p>
-          <p class="story-paragraph">
-            Empowerment Technology represents the suite of digital tools, communication platforms, and online systems that enable individuals and communities to <span class="story-highlight">collaborate, communicate, and solve real-world problems</span> efficiently. It bridges gaps, democraticizes knowledge, and turns creative thoughts into global impact.
+            It leverages digital tools, platform collaborative software, and modern media channels to empower individuals and communities—transforming passive consumers of information into active digital creators.
           </p>
         </div>
 
-        <!-- Global Users Chart -->
         <div class="chart-box">
           <div class="chart-header">
-            <h3 class="chart-title">Global Internet Users (2018 - 2026)</h3>
-            <span class="chart-stat">6.04 Billion Online</span>
+            <h3 class="chart-title">Global Internet Growth (Billions)</h3>
+            <span class="chart-stat">+7.2% YoY</span>
           </div>
-          <canvas id="internetChart" height="230"></canvas>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
-            <i class="fa-solid fa-circle-info"></i> Source: International Telecommunication Union (ITU) &amp; Statista Reports<sup>[1]</sup>.
-          </p>
+          <canvas id="internetUsersChart"></canvas>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: EVOLUTION -->
-  <section id="evolution" style="background: rgba(24, 9, 15, 0.4);">
+  <!-- SECTION 2: EVOLUTION OF THE WEB -->
+  <section id="evolution">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Section 02</span>
-        <h2 class="section-title neon-text-red">The Web Evolution</h2>
-        <p class="section-description">From static read-only text files to intelligent, decentralized ecosystems.</p>
+        <span class="section-tag">Historical Perspective</span>
+        <h2 class="section-title">The <span class="neon-text-red">Evolution</span> of the Web</h2>
+        <p class="section-description">
+          Tracing the progression of internet standards from static web pages to intelligent decentralized networks.
+        </p>
       </div>
 
       <div class="evolution-timeline">
         <!-- Web 1.0 -->
         <div class="web-card">
           <div class="web-version neon-text-blue">1.0</div>
-          <div class="web-era">The Syntactic Web (1990 - 2004)</div>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">
-            The static web of hyperlinked HTML documents. Users were passive readers of information provided by webmasters.
-          </p>
+          <div class="web-era">Static Web</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">The read-only era where users passively consumed hosted content.</p>
           <ul class="web-features">
             <li><i class="fa-solid fa-check"></i> Static HTML Pages</li>
-            <li><i class="fa-solid fa-check"></i> Guestbooks &amp; Forums</li>
-            <li><i class="fa-solid fa-check"></i> Read-Only Content</li>
+            <li><i class="fa-solid fa-check"></i> Hyperlink Navigation</li>
+            <li><i class="fa-solid fa-check"></i> Limited Interaction</li>
           </ul>
         </div>
 
         <!-- Web 2.0 -->
         <div class="web-card">
           <div class="web-version neon-text-red">2.0</div>
-          <div class="web-era">The Social Web (2004 - Present)</div>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">
-            The interactive and user-generated web. Fueled by social media, cloud platforms, and dynamic web applications.
-          </p>
+          <div class="web-era">Social Web</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">The read-write era driven by user-generated content and social networks.</p>
           <ul class="web-features">
-            <li><i class="fa-solid fa-check"></i> Social Networks &amp; Blogs</li>
-            <li><i class="fa-solid fa-check"></i> User-Generated Media</li>
-            <li><i class="fa-solid fa-check"></i> Read &amp; Write Interactive</li>
+            <li><i class="fa-solid fa-check"></i> Social Media & Blogs</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic Web Apps</li>
+            <li><i class="fa-solid fa-check"></i> Cloud Platforms</li>
           </ul>
         </div>
 
         <!-- Web 3.0 -->
         <div class="web-card">
           <div class="web-version neon-text-blue">3.0</div>
-          <div class="web-era">The Semantic Web (Emerging)</div>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">
-            The decentralized and machine-readable web. Emphasizes smart data, AI algorithms, and user data ownership.
-          </p>
+          <div class="web-era">Semantic Web</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">The smart, decentralized era powered by machine understanding and distributed databases.</p>
           <ul class="web-features">
-            <li><i class="fa-solid fa-check"></i> Decentralized Networks</li>
-            <li><i class="fa-solid fa-check"></i> Artificial Intelligence</li>
-            <li><i class="fa-solid fa-check"></i> Read, Write &amp; Own</li>
+            <li><i class="fa-solid fa-check"></i> AI & Machine Learning</li>
+            <li><i class="fa-solid fa-check"></i> Decentralization</li>
+            <li><i class="fa-solid fa-check"></i> Semantic Search</li>
           </ul>
         </div>
 
         <!-- Web 4.0 -->
         <div class="web-card">
           <div class="web-version neon-text-red">4.0</div>
-          <div class="web-era">The Symbiotic Web (Future)</div>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">
-            An ubiquitous, intelligent web where humans and machines interact in real-time symbiotic harmony.
-          </p>
+          <div class="web-era">Symbiotic Web</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">The ubiquitous, intelligent connection where machines and humans interact seamlessly.</p>
           <ul class="web-features">
-            <li><i class="fa-solid fa-check"></i> Neural Interactions</li>
-            <li><i class="fa-solid fa-check"></i> Ambient Intelligence</li>
-            <li><i class="fa-solid fa-check"></i> Autonomous Systems</li>
+            <li><i class="fa-solid fa-check"></i> Autonomous Agents</li>
+            <li><i class="fa-solid fa-check"></i> Ubiquitous Computing</li>
+            <li><i class="fa-solid fa-check"></i> Neural Integration</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: WATCH -->
+  <!-- SECTION 3: WATCH (VIDEO EXPLAINER) -->
   <section id="watch">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Section 03</span>
-        <h2 class="section-title neon-text-blue">How The Internet Works</h2>
-        <p class="section-description">A visual dive into protocols, packet switching, and global infrastructure.</p>
+        <span class="section-tag">Interactive Media</span>
+        <h2 class="section-title">Video <span class="neon-text-blue">Explainer</span></h2>
+        <p class="section-description">
+          Watch a brief summary on the impact of Empowerment Technology in today's digital landscape.
+        </p>
       </div>
 
       <div class="video-wrapper">
-        <div class="iframe-container">
+        <div class="video-container">
           <iframe 
-            src="https://www.youtube.com/embed/Fno0L_XsdWM" 
-            title="What is the Internet and How it Works" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Empowerment Technology Video Explainer" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
         </div>
         <div class="video-info">
-          <div>
-            <h3 class="video-title neon-text-blue">Understanding Internet Fundamentals</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">
-              Educational explainer covering IP addresses, DNS, routers, and fiber-optic backbones.
-            </p>
-          </div>
-          <a href="https://youtu.be/Fno0L_XsdWM" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
-            Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: MY WORK -->
-  <section id="work" style="background: rgba(24, 9, 15, 0.4);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Section 04</span>
-        <h2 class="section-title neon-text-red">My Creative Works</h2>
-        <p class="section-description">Demonstrating multimedia creation, graphic design, and video editing skills.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- 1. Powtoon Video -->
-        <div class="work-card">
-          <div class="work-media">
-            <a href="https://www.powtoon.com/online-presentation/ekGTPtSvadq/?mode=movie" target="_blank" class="work-media-placeholder">
-              <i class="fa-solid fa-play-circle work-icon" style="color: var(--accent-red);"></i>
-              <span>Launch Powtoon Presentation</span>
-            </a>
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Animated Presentation</span>
-            <h3 class="work-title">Powtoon Animated Explainer</h3>
-            <p class="work-desc">An interactive animated presentation created on Powtoon to illustrate digital concepts with engaging storytelling.</p>
-            <a href="https://www.powtoon.com/online-presentation/ekGTPtSvadq/?mode=movie" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">
-              Open Project <i class="fa-solid fa-external-link"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- 2. CapCut Video -->
-        <div class="work-card">
-          <div class="work-media">
-            <video controls poster="https://via.placeholder.com/600x340/18090f/00d2ff?text=jarredcapcut.mp4">
-              <source src="jarredcapcut.mp4" type="video/mp4">
-              Your browser does not support HTML5 video player.
-            </video>
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Video Editing</span>
-            <h3 class="work-title">Jarred CapCut Production</h3>
-            <p class="work-desc">A edited video project (`jarredcapcut.mp4`) demonstrating transitions, overlays, and audio syncing techniques.</p>
-            <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-file-video"></i> Format: MP4 Local Video</span>
-          </div>
-        </div>
-
-        <!-- 3. Canva Graphic Design -->
-        <div class="work-card">
-          <div class="work-media">
-            <a href="https://www.canva.com/design/DAHM7cFAaMk/tkTjxj38C9wbfBKrOUOY9Q/edit" target="_blank" class="work-media-placeholder">
-              <i class="fa-solid fa-palette work-icon" style="color: var(--accent-blue);"></i>
-              <span>Open Design in Canva</span>
-            </a>
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Graphic Design</span>
-            <h3 class="work-title">Canva Visual Artwork</h3>
-            <p class="work-desc">A visual design created in Canva focusing on color balance, visual hierarchy, and modern branding layout.</p>
-            <a href="https://www.canva.com/design/DAHM7cFAaMk/tkTjxj38C9wbfBKrOUOY9Q/edit" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">
-              View Canva Design <i class="fa-solid fa-pen-nib"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- 4. Pinterest Profile -->
-        <div class="work-card">
-          <div class="work-media">
-            <a href="https://ph.pinterest.com/jarredgrantg/?invite_code=ae0611f6e08747b593c771710c5efb4c&sender=970737032089358025" target="_blank" class="work-media-placeholder">
-              <i class="fa-brands fa-pinterest work-icon" style="color: #e60023;"></i>
-              <span>Visit Pinterest Profile</span>
-            </a>
-          </div>
-          <div class="work-body">
-            <span class="work-tag">Creative Curation</span>
-            <h3 class="work-title">Jarred's Pinterest Board</h3>
-            <p class="work-desc">A curated aesthetic gallery showcasing digital inspiration, visual assets, and technology design concepts.</p>
-            <a href="https://ph.pinterest.com/jarredgrantg/?invite_code=ae0611f6e08747b593c771710c5efb4c&sender=970737032089358025" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">
-              Follow Board <i class="fa-solid fa-user-plus"></i>
-            </a>
+          <h3 class="video-title">Introduction to Empowerment Technologies</h3>
+          <div class="video-tags">
+            <span class="video-tag">#EmpTech</span>
+            <span class="video-tag">#DigitalLiteracy</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: STAY ALERT -->
-  <section id="safety">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Section 05</span>
-        <h2 class="section-title neon-text-blue">Stay Alert: Digital Safety &amp; Netiquette</h2>
-        <p class="section-description">Essential principles to protect your digital footprint and interact responsibly.</p>
-      </div>
-
-      <div class="safety-grid">
-        <!-- 1. Netiquette -->
-        <div class="safety-card">
-          <div class="safety-icon"><i class="fa-solid fa-users-slash"></i></div>
-          <h3 class="safety-title neon-text-red">Core Netiquette</h3>
-          <ul class="safety-list">
-            <li><i class="fa-solid fa-angle-right"></i> Remember the Human: Treat online peers with empathy.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Avoid ALL CAPS: Typing in capital letters implies shouting.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Respect Bandwidth: Share concise and relevant information.</li>
-          </ul>
-        </div>
-
-        <!-- 2. Cyber Security -->
-        <div class="safety-card">
-          <div class="safety-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3 class="safety-title neon-text-blue">Cybersecurity Habits</h3>
-          <ul class="safety-list">
-            <li><i class="fa-solid fa-angle-right"></i> Multi-Factor Auth (MFA): Always enable 2FA on accounts.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Strong Passphrases: Use unique, non-dictionary passwords.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Beware of Phishing: Never click unknown email links.</li>
-          </ul>
-        </div>
-
-        <!-- 3. Digital Footprint -->
-        <div class="safety-card">
-          <div class="safety-icon"><i class="fa-solid fa-fingerprint"></i></div>
-          <h3 class="safety-title neon-text-red">Digital Footprint</h3>
-          <ul class="safety-list">
-            <li><i class="fa-solid fa-angle-right"></i> Think Before Posting: Once online, data persists indefinitely.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Privacy Settings: Regularly review account permissions.</li>
-            <li><i class="fa-solid fa-angle-right"></i> Copyright Respect: Always cite sources and creators.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REFERENCES & FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="references-box">
-        <h4 class="references-title"><i class="fa-solid fa-book-bookmark"></i> References &amp; Data Sources</h4>
-        <ul class="references-list">
-          <li>[1] International Telecommunication Union (ITU). (2025/2026). <em>Facts and Figures: Global Connectivity Report</em>. Retrieved from <a href="https://www.itu.int" target="_blank">https://www.itu.int</a></li>
-          <li>[2] Statista &amp; DataReportal. (2026). <em>Global Digital Overview &amp; Internet Penetration Statistics</em>. Retrieved from <a href="https://www.statista.com" target="_blank">https://www.statista.com</a></li>
-          <li>[3] Code.org / YouTube. <em>What is the Internet and How it Works</em>. Retrieved from <a href="https://youtu.be/Fno0L_XsdWM" target="_blank">https://youtu.be/Fno0L_XsdWM</a></li>
-          <li>[4] World Wide Web Consortium (W3C). <em>Web Architecture &amp; Evolution Standards</em>. Retrieved from <a href="https://www.w3.org" target="_blank">https://www.w3.org</a></li>
-        </ul>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="neon-text-red">Empowerment</span> Tech Portfolio
+        </div>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2026 Jarred | Empowerment Technology Portfolio. Hosted with GitHub Pages.</p>
+        <p>&copy; 2026 Digital Portfolio. Designed with HTML5, CSS3, and Chart.js.</p>
       </div>
     </div>
   </footer>
 
-  <!-- CHART & INTERACTIVITY SCRIPT -->
+  <!-- CHART.JS INITIALIZATION SCRIPT -->
   <script>
-    // Initialize Chart.js for Section 1
-    document.addEventListener("DOMContentLoaded", function () {
-      const ctx = document.getElementById('internetChart').getContext('2d');
+    document.addEventListener('DOMContentLoaded', function () {
+      const ctx = document.getElementById('internetUsersChart').getContext('2d');
       
-      const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-      gradient.addColorStop(0, 'rgba(0, 210, 255, 0.5)');
-      gradient.addColorStop(1, 'rgba(230, 57, 86, 0.05)');
-
       new Chart(ctx, {
         type: 'line',
         data: {
           labels: ['2018', '2020', '2022', '2024', '2026'],
           datasets: [{
-            label: 'Global Internet Users (in Billions)',
-            data: [4.1, 4.9, 5.3, 5.8, 6.04],
+            label: 'Global Internet Users (Billions)',
+            data: [3.9, 4.5, 5.0, 5.4, 5.8],
             borderColor: '#00d2ff',
-            borderWidth: 3,
-            backgroundColor: gradient,
+            backgroundColor: 'rgba(0, 210, 255, 0.15)',
             fill: true,
-            tension: 0.35,
+            tension: 0.4,
             pointBackgroundColor: '#e63956',
             pointBorderColor: '#ffffff',
-            pointRadius: 6,
-            pointHoverRadius: 8
+            pointRadius: 5
           }]
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
           plugins: {
             legend: {
               labels: {
                 color: '#a3939b',
-                font: { family: 'Plus Jakarta Sans' }
+                font: {
+                  family: 'Plus Jakarta Sans'
+                }
               }
             }
           },
           scales: {
             x: {
-              grid: { color: 'rgba(255, 255, 255, 0.05)' },
-              ticks: { color: '#a3939b' }
+              ticks: { color: '#a3939b' },
+              grid: { color: 'rgba(230, 57, 86, 0.1)' }
             },
             y: {
-              grid: { color: 'rgba(255, 255, 255, 0.05)' },
               ticks: { color: '#a3939b' },
-              suggestedMin: 3,
-              suggestedMax: 7
+              grid: { color: 'rgba(230, 57, 86, 0.1)' }
             }
           }
         }
       });
     });
   </script>
+
 </body>
 </html>
